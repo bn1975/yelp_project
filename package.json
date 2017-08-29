@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "knex": "knex"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +15,7 @@
     "ejs": "^2.5.7",
     "express": "^4.15.4",
     "knex": "^0.13.0",
+    "morgan": "^1.8.2",
     "pg": "^7.2.0"
   },
   "devDependencies": {
