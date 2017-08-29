@@ -5,6 +5,8 @@ const express = require('express'),
       knex = require('./db');
 
 const app = express();
+//FOR USER REGISTRATION
+const users = require('./routes/users');
 
 // Check the process.env for a PORT value or
 // set it to the default of 8000.
@@ -13,6 +15,9 @@ const PORT = process.env.PORT || '8000';
 // Tell the body parser to "translate" the form
 // it's getting form the client INTO A req.body OBJECT
 app.use(bodyParser.urlencoded({extended: false}));
+
+//USER REGISTRATION
+app.use(users);
 
 // Logger for incoming requests
 app.use(morgan('common'));
