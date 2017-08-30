@@ -1,0 +1,23 @@
+body {
+  background-color: black;
+}
+
+.carousel-caption {
+  font-family: 'Poiret One', serif;
+  color: black;
+}
+
+
+.col-lg-4 {
+  font-family: 'Comfortaa', serif;
+}
+
+.navbar-wrapper {
+  font-family: 'Comfortaa', serif;
+}
+
+.col-lg-4 {
+  background-color: black;
+  color: white;
+
+}
