@@ -64,89 +64,27 @@
 
         <!-- You only need this form and the form-validation.css -->
 
-        <form class="form" method="post" action="#">
+			<div class="container">
 
+				<div class="row">
+					<div class="col-xs-12 col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4">
+						<!-- HERE WE CAN DO action="/signup" or action="/users" for REGISTRATION -->
+						<form method="POST" action="/signup">
+						  <div class="form-group"> <!-- Begin email group-->
+						    <label for="emailInput">Email:</label>
+						    <input type="text" class="form-control" id="emailInput" placeholder="Example input">
+						  </div><!-- END email group-->
 
-					<div class="input-group">
-					  <span class="input-group-addon" id="basic-addon1">@</span>
-					  <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+						  <div class="form-group"><!-- Begin password group-->
+						    <label for="passwordInput">Password</label>
+						    <input type="password" class="form-control" id="passwordInput" placeholder="Password">
+						  </div><!-- End password group-->
+
+							<button class="btn btn-primary col-xs-12">Sign Up</button>
+						</form>
 					</div>
-
-
-
-            <div class="form-row form-input-name-row">
-
-							<span class="glyphicon glyphicon-search" aria-hidden="false"></span>
-
-
-                <label>
-                    <span>Name</span>
-                    <input type="text" name="name">
-                </label>
-
-                <!--
-                    Add these three elements to every form row. They will be shown by the
-                    .form-valid-data and .form-invalid-data classes (see the JS for an example).
-                -->
-
-                <span class="form-valid-data-sign"><i class="fa fa-check"></i></span>
-
-                <span class="form-invalid-data-sign"><i class="fa fa-close"></i></span>
-                <span class="form-invalid-data-info"></span>
-
-            </div>
-
-<br>
-
-
-            <div class="form-row form-input-email-row">
-
-                <label>
-                    <span>Email</span>
-                    <input type="email" name="email" value="email@example.com">
-                </label>
-
-                <span class="form-valid-data-sign"><i class="fa fa-check"></i></span>
-
-                <span class="form-invalid-data-sign"><i class="fa fa-close"></i></span>
-                <span class="form-invalid-data-info"></span>
-
-            </div>
-						<br>
-
-            <!-- <div class="form-row">
-
-                <label>
-                    <span>Dropdown</span>
-                    <select name="dropdown">
-                        <option>Choose an option</option>
-                        <option>Option One</option>
-                        <option>Option Two</option>
-                        <option>Option Three</option>
-                        <option>Option Four</option>
-                    </select>
-                </label>
-
-            </div> -->
-
-            <div class="form-row">
-
-                <label class="form-checkbox">
-                    <span>Agree to our terms and conditions</span>
-                    <input type="checkbox" name="checkbox" checked>
-                </label>
-
-            </div>
-
-<br>
-
-            <div class="form-row">
-
-                <button type="submit">Get in my belly!</button>
-
-            </div>
-
-        </form>
+				</div>
+			</div>
 
     </div>
 

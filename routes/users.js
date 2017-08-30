@@ -5,7 +5,11 @@ const router = express.Router();
 const bcrypt = require('bcrypt-as-promised');
 const knex = require('../db');
 
-router.post('/users', (req, res, next) => {
+
+
+// FOR USER REGISTRATION
+// ALLOW a POST request to either /users or /signup
+router.post(['/users', '/signup'], (req, res, next) => {
   bcrypt.hash(req.body.password, 12)
     .then((hashed_password) => {
       return knex('users')
