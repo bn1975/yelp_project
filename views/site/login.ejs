@@ -2,7 +2,7 @@
 <html>
 
 <head>
-
+	
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,17 +10,14 @@
 	<title>Register for feedMe</title>
 
 	<!-- Bootstrap core CSS -->
-	<!-- <link href="bootstrap.min.css" rel="stylesheet"> -->
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
-	<link href="signup.css" rel="stylesheet">
+	<link href="login.css" rel="stylesheet">
 
 	<link rel="stylesheet"
 				href="https://fonts.googleapis.com/css?family=Comfortaa">
 	<link rel="stylesheet"
 				href="https://fonts.googleapis.com/css?family=Poiret+One">
-
-
 
 </head>
 
@@ -38,7 +35,7 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="/home">feedMe</a>
+						<a class="navbar-brand" href="/">feedMe</a>
 					</div>
 					<div id="navbar" class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
@@ -55,24 +52,26 @@
 		</div>
 	</div>
 
-  <div class="image-container"><img align="center" src="https://cdn.pixabay.com/photo/2017/07/14/20/01/cutlery-2504832_960_720.jpg" alt="Generic placeholder image" width="100%" height="350"></div>
+
+<!-- //HOW DO I OVERLAY TEXT ON TOP OF AN IMAGE? -->
+  <div><img align="center" src="https://cdn.pixabay.com/photo/2017/07/14/20/01/cutlery-2504832_960_720.jpg" alt="Generic placeholder image" width="100%" height="350"></div>
 
     <div class="main-content">
-
 
         <!-- You only need this form and the form-validation.css -->
 
 			<div class="container">
 
-				<div><h1 align="center">feedMe Registration</h1></div>
+				<div><h1 align="center">Login:  let feedMe feed you</h1></div>
 
 				<div class="row">
 					<div class="col-xs-12 col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4">
-						<!-- HERE WE CAN DO action="/signup" or action="/users" for REGISTRATION -->
-						<form method="POST" action="/signup">
+
+						<form method="POST" action="/login"> <!-- BEGIN login form -->
+
 						  <div class="form-group"> <!-- Begin email group-->
 						    <label for="emailInput">Email:</label>
-						    <input type="text" name="email" class="form-control" id="emailInput" placeholder="Example input">
+						    <input type="text" name="email"  class="form-control" id="emailInput" placeholder="Example input">
 						  </div><!-- END email group-->
 
 						  <div class="form-group"><!-- Begin password group-->
@@ -80,41 +79,15 @@
 						    <input type="password" name="password" class="form-control" id="passwordInput" placeholder="Password">
 						  </div><!-- End password group-->
 
-							<button class="btn btn-primary col-xs-12">Sign Up</button>
-						</form>
+							<button class="btn btn-primary col-xs-12">Login</button>
+						</form><!-- END login form -->
 					</div>
 				</div>
 			</div>
 
     </div>
 
-
-
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
-<script>
-
-    $(document).ready(function() {
-
-        // Here is how to show an error message next to a form field
-
-        var errorField = $('.form-input-name-row');
-
-        // Adding the form-invalid-data class will show
-        // the error message and the red x for that field
-
-        errorField.addClass('form-invalid-data');
-        errorField.find('.form-invalid-data-info').text('Please enter your name');
-
-
-        // Here is how to mark a field with a green check mark
-
-        var successField = $('.form-input-email-row');
-
-        successField.addClass('form-valid-data');
-    });
-
-</script>
 
 </body>
 

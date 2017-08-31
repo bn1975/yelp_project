@@ -7,6 +7,7 @@ const express = require('express'),
       bcrypt = require('bcrypt-as-promised'),
       cookieSession = require('cookie-session');
 
+//LOAD ENV FILE FOR SECRETS
 if (process.env.APP_MODE !== 'production') {
   require('dotenv').config(); // LOAD IN .env file in development
 }
@@ -26,22 +27,28 @@ app.use(cookieSession({
     process.env.SECRET_ONE,
     process.env.SECRET_TWO
   ],
-}))
+}));
 
-
+app.get('/profile', function(req,res) {
+  if(req.session.user_id) {
+    res.send('Welcome Back')
+  } else {
+    res.redirect('/signup')
+  }
+});
 
 // Tell the body parser to "translate" the form
 // it's getting form the client INTO A req.body OBJECT
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static("public"));
 
-
+//TELL PARSER TO "TRANSLATE" ???? INTO JSON
+app.use(bodyParser.json());
 
 //FOR USER REGISTRATION
 const users = require('./routes/users');
 //USER REGISTRATION
 app.use(users);
-
 
 // For site related routes
 const site = require('./routes/site');
@@ -49,8 +56,6 @@ app.use(site);
 
 // Telling express we will template with EJS files
 app.set('view engine', 'ejs');
-
-
 
 app.listen(PORT, function () {
   console.log('SERVER RUNNING', PORT);

@@ -1,3 +1,9 @@
-/*body {
-        background-image: url("/cuts.jpeg");
-}*/
+body {
+  font-family: "Comfortaa";
+}
+
+img {
+  padding: 30px;
+  width: 75%;
+  height: 400px
+}
