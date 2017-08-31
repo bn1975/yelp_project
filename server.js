@@ -19,6 +19,9 @@ const PORT = process.env.PORT || '8000';
 // Logger for incoming requests
 app.use(morgan('common'));
 
+const cookieParser = require('cookie-parser');
+app.use(cookieParser());
+
 // Add cookie session
 app.use(cookieSession({
   name: 'foodApp',

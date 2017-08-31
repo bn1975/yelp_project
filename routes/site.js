@@ -1,6 +1,9 @@
 const router = require('express').Router();
 const bcrypt = require('bcrypt-as-promised');
 const knex = require('../db');
+const url = require('url');
+
+
 
 //ROUTE:  Homepage
 router.get('/', function (req, res) {
@@ -64,6 +67,14 @@ router.post('/login', function (req, res) {
 router.get('/profile', function (req, res) {
   // Send profile.ejs file to the client
   if (req.session.user_id) { // CHECK IF LOGGED IN BEFORE RENDERING A PROFILE
+    // Turn cookie urlencoded position into a query and parse using URL node module
+    // i.e. turn  lat=111.11111&long=77.77777
+    //      into ?lat=111.11111&long=77.77777 by prepending the ? symbol
+    // then parse using url.parse which sees the ? and knows it's a query
+    // returning
+    //  { lat: '111.11111', long: '77.77777' }
+    const positionQueryString = '?' + req.cookies.userPosition;
+    const position = url.parse(positionQueryString, true).query;
     res.render('site/profile');
   } else {
     res.redirect('/signup');
