@@ -37,6 +37,22 @@ app.use(cookieSession({
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static("public"));
 
+const yelp = require('yelp-fusion');
+app.use(function (req, res, next) {
+  yelp.accessToken(
+    process.env.YELP_CLIENT_ID,
+    process.env.YELP_CLIENT_SECRET
+  )
+    .then(function (response) {
+      res.locals.token = response.jsonBody.access_token;
+      next()
+    })
+    .catch(function () {
+      next();
+    })
+})
+
+
 //TELL PARSER TO "TRANSLATE" ???? INTO JSON
 app.use(bodyParser.json());
 

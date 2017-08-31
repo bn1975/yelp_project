@@ -1,5 +1,5 @@
 body {
-  background-color: black;
+
   font-family: "Comfortaa"
 }
 
@@ -10,10 +10,11 @@ img {
     border: solid 5px white;
     margin: 20px;
     width: 400px;
-    height: 200px;
+    height: 400px;
     opacity: 1;
     filter: alpha(opacity=100);
     no-repeat;
+
   }
 
 img:hover

@@ -67,6 +67,15 @@ router.post('/login', function (req, res) {
 router.get('/profile', function (req, res) {
   // Send profile.ejs file to the client
   if (req.session.user_id) { // CHECK IF LOGGED IN BEFORE RENDERING A PROFILE
+    res.render('site/profile');
+  } else {
+    res.redirect('/signup');
+  }
+});
+
+router.get('/results', function (req, res) {
+  // Send profile.ejs file to the client
+  if (req.session.user_id) { // CHECK IF LOGGED IN BEFORE RENDERING A PROFILE
     // Turn cookie urlencoded position into a query and parse using URL node module
     // i.e. turn  lat=111.11111&long=77.77777
     //      into ?lat=111.11111&long=77.77777 by prepending the ? symbol
@@ -75,11 +84,33 @@ router.get('/profile', function (req, res) {
     //  { lat: '111.11111', long: '77.77777' }
     const positionQueryString = '?' + req.cookies.userPosition;
     const position = url.parse(positionQueryString, true).query;
-    res.render('site/profile');
+
+////////////////////////
+//YELP LOGIC FOR QUERY AND RESULTS
+const yelp = require('yelp-fusion');
+
+
+const client = yelp.client(res.locals.token);
+
+client.search({
+  latitude: position.lat,
+  longitude: position.long,
+  sort_by: "rating",
+  categories: req.query.categories,
+  radius: "1500"
+}).then(response => {
+  console.log(response.jsonBody.businesses);
+  const businesses = response.jsonBody.businesses;
+  res.render('site/results', { businesses: businesses })
+}).catch(e => {
+  console.log(e);
+});
+
   } else {
     res.redirect('/signup');
   }
-});
+})
+
 
 //ROUTE:  Logout
 router.get('/logout', function (req, res) {
