@@ -29,14 +29,6 @@ app.use(cookieSession({
   ],
 }));
 
-app.get('/profile', function(req,res) {
-  if(req.session.user_id) {
-    res.send('Welcome Back')
-  } else {
-    res.redirect('/signup')
-  }
-});
-
 // Tell the body parser to "translate" the form
 // it's getting form the client INTO A req.body OBJECT
 app.use(bodyParser.urlencoded({extended: false}));
