@@ -1,27 +1,27 @@
 body {
+
   background-color: black;
+
 }
 
-.carousel-caption {
-  font-family: 'Poiret One', serif;
-  color: black;
-}
 
 .navbar-wrapper {
+
   font-family: 'Comfortaa', serif;
+
 }
 
 .col-lg-4 {
+
   background-color: black;
   font-family: 'Comfortaa', serif;
   color: white;
 
 }
 
-/*.logout {
-  align-self: right;
-}*/
+.img-circle {
 
-.row {
-  height: 400px;
+  border: solid 2px rgba(110, 162, 221, .5);
+  box-shadow: 0 0 40px #6ea2dd;
+
 }

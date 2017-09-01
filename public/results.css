@@ -17,10 +17,22 @@ container {
 }*/
 
 img {
+
   padding-left: : 20px;
   height: 200px;
   width: 200px;
+  border-radius: 30px;
+  /*border: solid 3px white;*/
+
 }
+
+.img-circle {
+
+  border: solid 2px white;
+  box-shadow: 0 0 40px #6ea2dd;
+
+}
+
 
 p {
   padding-left: : 20px;

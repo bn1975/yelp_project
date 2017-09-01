@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- Bootstrap core CSS -->
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="./custom.css">
+  <!-- <link rel="stylesheet" href="./custom.css"> -->
   <link rel="stylesheet" href="./profile.css">
 
   <!-- google fonts -->
@@ -17,13 +17,11 @@
 
   <script type="text/javascript" src="/scripts/profile.js">
   </script>
-  <title>Profile and Search</title>
+  <title>Feeding You</title>
 
 </head>
 
 <body>
-
-
   <!-- NAV BAR -->
   <div class="navbar-wrapper">
     <div class="container">
@@ -53,27 +51,55 @@
   </div>
 
   <!-- PROFILE, SEARCH, AND RESULTS DISPLAY -->
-  <div class="container">
-    <section class="results">
-      <div class="row" align="center">
+<div class="container">
+  <section id="searches">
 
-<!-- //FIRST IMAGE -->
-        <div class='wrapper' class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6">
+
+
+<!-- PROFILE -->
+<div class="row">
+
+<div class="row" align="right">
+        <img class="img-circle" src="https://media1.s-nbcnews.com/j/newscms/2014_15/309611/140408-cookie-monster-jhc-1135_68232dae2801544feaa1d7efcc772bff.nbcnews-fp-1200-800.jpg" alt="Generic placeholder image">
+        <div class="userinfo" style="font-size:3em;">USERNAME</div>
+        <div id="user" style="font-size:1.75em;">profile info</div>
+</div>
+
+<!-- IMAGES -->
+<!-- FIRST IMAGE -->
+        <div class='wrapper' class="gallery_product col-md-8 col-md-4 col-sm-4 col-xs-6">
         	<a href="/results?categories=pizza"><img src="http://cf.nearsay.com/sites/default/files/styles/480x240/public/content_images/pizza-beer.jpg?itok=6jFvCu8P" class="img-responsive" /></a>
         	<div class='description'>
-        		<p class='description_content'>Pizza and Beer!</p>
+        		<p class='description_content'>Pizza</p>
         	</div>
         </div>
 
 <!-- //SECOND IMAGE -->
         <div class='wrapper' class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6">
-          <a href="/results?categories=thai"><img src="/images/rice.jpeg" class="img-responsive" /></a>
+          <a href="/results?categories=thai"><img src="/images/rice.jpeg" class="img-responsive" id="thai" /></a>
           <div class='description'>
             <p class='description_content'>Thai</p>
           </div>
         </div>
 
+<!-- THIRD IMAGE -->
+        <div class='wrapper' class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6">
+        	<a href="/results?categories=cafes"><img src="/images/tea.jpeg" class="img-responsive" /></a>
+        	<div class='description'>
+        		<p class='description_content' id="coffeeshops">Cafes</p>
+        	</div>
+        </div>
+
+<!-- FOURTH IMAGE -->
+        <div id="desserts" class='wrapper' class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6">
+          <a href="/results?categories=desserts"><img src="http://foodpack8.com/images/elements/chocolavacake.png" class="img-responsive" /></a>
+          <div class='description'>
+            <p class='description_content'>Dessert</p>
+          </div>
+        </div>
       </div>
+
+</div>
     </section>
   </div>
 </body>

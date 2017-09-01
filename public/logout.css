@@ -9,16 +9,17 @@ col-sm-6 {
 
 .goodbyetext {
   padding-left: 0px;
-  margin-left: 0px;
-  margin-top: 150px;
+  margin-left: 15px;
+  margin-top: 160px;
   font-size: 50px;
+  
 }
 
 img {
   padding: 0px;
   width: 600px;
   height: 400px;
-  margin-left: 225px;
+  margin-left: 210px;
   margin-right: 0px;
 
 }

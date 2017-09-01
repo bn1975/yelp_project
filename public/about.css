@@ -1,0 +1,25 @@
+body {
+
+  background-color: black;
+  color: white;
+  font-family: "Comfortaa";
+}
+
+h1 {
+
+    text-shadow: 0 0 10px #6ea2dd;
+
+  }
+
+.img-circle {
+
+  border: solid 2px rgba(110, 162, 221, .5);
+  box-shadow: 0 0 40px #6ea2dd;
+
+}
+
+.about {
+
+font-size: 50
+
+}

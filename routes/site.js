@@ -38,7 +38,7 @@ router.get('/login', function (req, res) {
 
 
 //AUTHENTICATE
-router.post('/login', function (req, res) {
+router.post('/profile', function (req, res) {
   knex('users')
     .where({email: req.body.email})
     .first()
@@ -46,11 +46,9 @@ router.post('/login', function (req, res) {
       if (!user) {
         return res.sendStatus(401);
       }
-
       bcrypt.compare(req.body.password, user.hashed_password)
         .then(function () {
           res.render('site/profile');
-
         })
         .catch(function () {
           res.sendStatus(401);
@@ -67,7 +65,7 @@ router.post('/login', function (req, res) {
 router.get('/profile', function (req, res) {
   // Send profile.ejs file to the client
   if (req.session.user_id) { // CHECK IF LOGGED IN BEFORE RENDERING A PROFILE
-    res.render('site/profile');
+    res.render('/profile');
   } else {
     res.redirect('/signup');
   }
