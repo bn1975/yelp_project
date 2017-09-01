@@ -7,17 +7,21 @@ body {
   color: black;
 }
 
-
-.col-lg-4 {
-  font-family: 'Comfortaa', serif;
-}
-
 .navbar-wrapper {
   font-family: 'Comfortaa', serif;
 }
 
 .col-lg-4 {
   background-color: black;
+  font-family: 'Comfortaa', serif;
   color: white;
 
+}
+
+/*.logout {
+  align-self: right;
+}*/
+
+.row {
+  height: 400px;
 }

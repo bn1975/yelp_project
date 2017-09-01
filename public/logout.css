@@ -1,9 +1,24 @@
 body {
   font-family: "Comfortaa";
+  background-color: white;
+}
+
+col-sm-6 {
+  padding-left: 50px;
+}
+
+.goodbyetext {
+  padding-left: 0px;
+  margin-left: 0px;
+  margin-top: 150px;
+  font-size: 50px;
 }
 
 img {
-  padding: 30px;
-  width: 75%;
-  height: 400px
+  padding: 0px;
+  width: 600px;
+  height: 400px;
+  margin-left: 225px;
+  margin-right: 0px;
+
 }
