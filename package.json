@@ -28,5 +28,13 @@
   "devDependencies": {
     "dotenv": "^4.0.0",
     "nodemon": "^1.11.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bn1975/yelp_project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bn1975/yelp_project/issues"
+  },
+  "homepage": "https://github.com/bn1975/yelp_project#readme"
 }

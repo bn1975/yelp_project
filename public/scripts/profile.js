@@ -8,26 +8,6 @@ $(document).ready(function () {
       //2.  or has not been to the site before and no cookie exists
   var position = readCookie('userPosition');
 
-//CHECK:  if var position has a value in order to proceed
-  if (position) {
-    alert('We have your position!');
-//IF we do not have users location
-    //load the progress indicator
-  } else {
-    var loader = $('<div>').css({
-      backgroundPosition: 'center center',
-      backgroundRepeat: 'no-repeat',
-      backgroundImage: 'url(https://s-media-cache-ak0.pinimg.com/originals/cb/05/42/cb05420fec7a12bb752da11df0fb553f.gif)',
-      backgroundSize: 'cover',
-      height: '400px',
-      width: '400px',
-      margin: '0 auto'
-    });
-//place loader in the "results" div in the DOM w/ jquery
-    $('.results').prepend(loader);
-    getPosition(loader);
-  }
-
 //LOCATION:  use native browser capabilities to lookup client location
   function getPosition(loader) {
     // Taken from MDN w3c schools
@@ -50,6 +30,26 @@ $(document).ready(function () {
       }
     })
   }
+
+  //CHECK:  if var position has a value in order to proceed
+    if (position) {
+      alert('We have your position!');
+  //IF we do not have users location
+      //load the progress indicator
+    } else {
+      var loader = $('<div>').css({
+        backgroundPosition: 'center center',
+        backgroundRepeat: 'no-repeat',
+        backgroundImage: 'url(https://s-media-cache-ak0.pinimg.com/originals/cb/05/42/cb05420fec7a12bb752da11df0fb553f.gif)',
+        backgroundSize: 'cover',
+        height: '400px',
+        width: '400px',
+        margin: '0 auto'
+      });
+  //place loader in the "results" div in the DOM w/ jquery
+      $('.results').prepend(loader);
+      getPosition(loader);
+    }
 
 // TAKEN FROM https://www.quirksmode.org/js/cookies.html
 //CREATE: urlencoded location cookie
